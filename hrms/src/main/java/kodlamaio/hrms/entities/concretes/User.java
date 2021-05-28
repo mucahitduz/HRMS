@@ -17,15 +17,17 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name="titles")
-public class Title {
+@Table(name = "users")
+public class User {
 	
+	@Column(name = "id")
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
 	private int id;
 	
-	@Column(name="job_title")
-	private String title;
+	@Column(name = "email")
+	private String email;
 	
+	@Column(name = "password")
+	private String password;
 }

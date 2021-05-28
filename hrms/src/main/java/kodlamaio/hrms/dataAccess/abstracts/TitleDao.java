@@ -6,4 +6,5 @@ import kodlamaio.hrms.entities.concretes.Title;
 
 public interface TitleDao extends JpaRepository<Title,Integer> {
 
+	Title findByTitle(String title);
 }

@@ -11,31 +11,29 @@ import org.springframework.web.bind.annotation.RestController;
 
 import kodlamaio.hrms.Core.utilities.results.DataResult;
 import kodlamaio.hrms.Core.utilities.results.Result;
-import kodlamaio.hrms.business.abstracts.TitleService;
-import kodlamaio.hrms.entities.concretes.Title;
+import kodlamaio.hrms.business.abstracts.CandidateService;
+import kodlamaio.hrms.entities.concretes.Candidate;
 
 @RestController
-@RequestMapping("/api/titles")
-public class TitlesController {
-	
-	
-	private TitleService titleService;
-	
+@RequestMapping("/api/candidates")
+public class CandidatesController {
+
+	private CandidateService candidateService;
 	
 	@Autowired
-	public TitlesController(TitleService titleService) {
+	public CandidatesController(CandidateService candidateService) {
 		super();
-		this.titleService = titleService;
+		this.candidateService = candidateService;
 	}
-
+	
 	@PostMapping("/add")
-	public Result add(@RequestBody Title title) {
-		return this.titleService.add(title);
+	public Result add(@RequestBody Candidate candidate) {
+		return this.candidateService.add(candidate);
 	}
 	
 	
 	@GetMapping("/getall")
-	public DataResult<List<Title>> getAll(){
-		return this.titleService.getAll();
-	}
+	public DataResult<List<Candidate>> getAll() {
+	return this.candidateService.getAll();
+}
 }
